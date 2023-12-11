@@ -3,6 +3,7 @@ const express = require('express')
 const URLrouter = express.Router();
 URLrouter
 .get('/',controller.home)
+.get('/short',controller.home)
 .post('/short',controller.getShortURL)
 .get('/:id',controller.getLongURL)
 
