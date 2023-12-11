@@ -1,3 +1,4 @@
+const path=require('path')
 const URL = require('../model/url').Url
  ShortUrl=()=>
 {
@@ -37,7 +38,7 @@ exports.getShortURL = async (req,res)=>
             }
        }
        else{
-          res.render('url',{ShortUrl:doc.ShortUrl}) 
+          res.render(path.resolve(__dirname,'url'),{ShortUrl:doc.ShortUrl}) 
        } 
     
     } 
@@ -73,7 +74,7 @@ exports.getLongURL = async (req,res)=>
 exports.home = (req,res)=>
 {
    try{
-      res.render('url',{ShortUrl:null})
+    res.render(path.resolve(__dirname,'url'),{ShortUrl:null})
    }
    catch(err)
    {
