@@ -15,5 +15,5 @@ main()
 server.use(express.static(path.join(__dirname, 'view')));
 server.use(express.urlencoded())
 server.use(express.json())
-server.use('/url',URLrouter.router)
+server.use('/',URLrouter.router)
 server.listen(8080);
