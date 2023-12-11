@@ -31,14 +31,14 @@ exports.getShortURL = async (req,res)=>
                         const url = new URL({...req.body,"ShortUrl":result})
                         let doc = await url.save()
                         isUnique=true;   
-                        res.render('url',{ShortUrl:doc.ShortUrl})   
+                        res.render(path.resolve(__dirname,'../views/url'),{ShortUrl:doc.ShortUrl})    
                     } 
                 
                 
             }
        }
        else{
-          res.render(path.resolve(__dirname,'url'),{ShortUrl:doc.ShortUrl}) 
+        res.render(path.resolve(__dirname,'../views/url'),{ShortUrl:doc.ShortUrl}) 
        } 
     
     } 
@@ -74,7 +74,8 @@ exports.getLongURL = async (req,res)=>
 exports.home = (req,res)=>
 {
    try{
-    res.render(path.resolve(__dirname,'url'),{ShortUrl:null})
+    
+    res.render(path.resolve(__dirname,'../views/url'),{ShortUrl:null})
    }
    catch(err)
    {

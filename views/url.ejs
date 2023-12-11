@@ -140,7 +140,7 @@
   <body>
     <div class="container">
       <h1>URL Shortening Tool</h1>
-      <form action="/url/short" method="post">
+      <form action="/short" method="post">
         <label for="floatingInput">Paste the URL to be shortened</label>
         <div class="section">
           <input type="text" id="floatingInput" name="LongUrl" required />
@@ -151,7 +151,7 @@
       <% if(ShortUrl) { %>
       <div class="result">
         Your Link is :
-        <a href="http://localhost:8080/url/<%= ShortUrl %>"><%= ShortUrl %></a>
+        <a href="http://localhost:8080/<%= ShortUrl %>"><%= ShortUrl %></a>
       </div>
       <% } %>
       <p>
